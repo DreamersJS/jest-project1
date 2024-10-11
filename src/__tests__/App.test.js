@@ -5,6 +5,6 @@ import App from '../App';
 
 test('renders the app component', () => {
   render(<App />);
-  const headingElement = screen.getByText(/Vite + React/i);
+  const headingElement = screen.getByRole('heading', { name: /Vite \+ React/i });
   expect(headingElement).toBeInTheDocument();
 });
