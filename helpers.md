@@ -24,6 +24,8 @@ Create a jest.config.js file in the root
     },
     moduleFileExtensions: ['js', 'jsx'],
     setupFilesAfterEnv: ['./setupTests.js'],
+    or
+    setupFilesAfterEnv: ['@testing-library/jest-dom'],
     moduleNameMapper: {
       '\\.(css|less|scss)$': 'identity-obj-proxy', // Mock CSS imports
       '\\.(svg|png|jpg|jpeg|gif)$': '<rootDir>/__mocks__/fileMock.js', // Mock static files
@@ -36,6 +38,12 @@ import '@testing-library/jest-dom';
 
     6. Add a Test Script to package.json
     7. use import React from 'react'; at top of component and test(App.jsx and App.test.js)
+    8. Jest doesn't know how to handle non-JavaScript files so: 
+Create a __mocks__/fileMock.js
+// __mocks__/fileMock.js
+ export default 'test-file-stub';
+
+npm install --save-dev identity-obj-proxy
 
 
 
